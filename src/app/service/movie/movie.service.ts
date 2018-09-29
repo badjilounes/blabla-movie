@@ -4,6 +4,7 @@ import {DetailInput} from '../../model/detail.input';
 import {Observable} from 'rxjs/index';
 import {environment} from '../../../environments/environment';
 import {SearchInput} from '../../model/search.input';
+import {SearchOuput} from '../../model/search.ouput';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class MovieService {
 
   constructor(private api: ApiService) { }
 
-  searchMovie(searchInput: SearchInput): Observable<any> {
+  searchMovie(searchInput: SearchInput): Observable<SearchOuput> {
     return this.api.get(`${environment.apiUrl}`, searchInput);
   }
 

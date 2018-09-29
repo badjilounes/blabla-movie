@@ -9,18 +9,28 @@ import {HttpClientModule} from '@angular/common/http';
 import {MovieService} from './service/movie/movie.service';
 import { HomeComponent } from './pages/home/home.component';
 import {AppRoutingModule} from './routing.module';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { MoviesComponent } from './pages/movies/movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SearchBarComponent,
+    MoviesComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ApiService, MovieService],
   bootstrap: [AppComponent]

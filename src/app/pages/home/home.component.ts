@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieService} from '../../service/movie/movie.service';
-import {SearchInput} from '../../model/search.input';
+import {Movie} from '../../model/movie.model';
+import {MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,23 @@ import {SearchInput} from '../../model/search.input';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private movieSrv: MovieService) { }
+  selectedMovie: Movie = undefined;
+  snackRef: MatSnackBarRef<SimpleSnackBar> = undefined;
 
-  ngOnInit() {
-    let search: SearchInput = { s: 'test' };
-    this.movieSrv.searchMovie(search).toPromise().then(
-      val => console.log(val), error => console.log(error));
+  constructor(private snackBar: MatSnackBar, private router: Router) { }
+
+  ngOnInit() {}
+
+  selectMovie(movie: Movie): void {
+    this.selectedMovie = movie;
+  }
+
+  validateVote(): void {
+    if (this.selectedMovie) {
+      let message = 'Votre vote à bien été pris en compte !';
+      let action = 'Rechercher un film';
+      this.snackRef = this.snackBar.open(message, action, {duration: 3000});
+      this.snackRef.onAction().subscribe(() => this.router.navigate(['movies']));
+    }
   }
 }

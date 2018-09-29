@@ -1,3 +1,50 @@
-<p>
-  home works!
-</p>
+<div class="home-container">
+
+  <div class="header-container">
+
+    <div class="logo-container">
+
+      <p class="logo-home v-align-middle">blablamovie</p>
+
+    </div>
+
+    <div class="list-btn-container">
+
+      <button mat-button class="film-btn v-align-middle" [routerLink]="['movies']">
+        voir films
+      </button>
+
+    </div>
+
+
+  </div>
+
+  <div class="img-container">
+
+    <img [src]="'assets/img/home.jpg'" class="img-home"/>
+
+    <div class="v-align-middle">
+
+      <p class="heading-home">Participez au jeu</p>
+
+      <p class="sub-heading-home">Votez pour votre film préféré.</p>
+
+      <div class="input-container">
+
+        <app-search-bar (selectedMovie)="selectMovie($event)"></app-search-bar>
+
+        <button mat-icon-button (click)="validateVote()">
+          <mat-icon aria-label="Voter">favorite</mat-icon>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

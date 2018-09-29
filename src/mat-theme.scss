@@ -10,7 +10,12 @@
 $movie-app-primary: mat-palette($mat-brown);
 $movie-app-accent:  mat-palette($mat-red, A200, A100, A400);
 $movie-app-warn:  mat-palette($mat-orange, A200, A100, A400);
+$movie-app-bg: #000;
+$movie-app-color: #e50914;
+
 $movie-app-theme:   mat-light-theme($movie-app-primary, $movie-app-accent, $movie-app-warn);
+
+
 
 // Include the default theme styles.
 @include angular-material-theme($movie-app-theme);
