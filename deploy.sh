@@ -24,7 +24,7 @@ NODE=`which node`
 NG=`which ng`
 `$NODE --max_old_space_size=4096 $NG build --prod --aot`
 
-rsync -d -r dist/badjilounes/ ../NodeStatic/public
+rsync -d -r dist/blabla-movie/ ../NodeStatic/public
 
 cd ../NodeStatic
 git add *
