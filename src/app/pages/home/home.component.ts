@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   validateVote(): void {
     if (this.selectedMovie) {
+      this.selectedMovie = undefined;
       let message = 'Votre vote à bien été pris en compte !';
       let action = 'Rechercher un film';
       this.snackRef = this.snackBar.open(message, action, {duration: 3000});
