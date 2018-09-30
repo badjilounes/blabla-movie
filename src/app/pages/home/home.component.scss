@@ -2,9 +2,7 @@
 @import 'src/mat-theme.scss';
 
 :host{
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
+  position: relative;
   display: block;
   background-color: $movie-app-bg;
 }
@@ -17,11 +15,6 @@
 }
 
 .header-container{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -moz-box;
-  display: flex;
-  flex-direction: row;
   height: 10vh;
   width: 100vw;
 }
@@ -32,15 +25,12 @@
 }
 
 .logo-container{
-  position: relative;
-  flex-grow: 1;
   width: 100vw;
+  padding-left: 16px;
 }
 
 .list-btn-container {
-  width: 100px;
-  flex: 0 0 auto;
-  padding-right: 16px;
+  width: 140px;
 }
 
 .img-home{
@@ -56,7 +46,6 @@
   font-weight: bold;
   color: $movie-app-color;
   text-transform: uppercase;
-  padding-left: 12px;
   text-align: left;
 }
 
@@ -64,7 +53,6 @@
   position: relative;
   text-align: center;
   width: 100vw;
-  font-size: 60px;
   color: $white-87-opacity;
   margin: 0 0 .2em;
   line-height: 1.1em;
@@ -76,17 +64,24 @@
   position: relative;
   text-align: center;
   width: 100vw;
-  font-size: 24px;
   color: $white-87-opacity;
   margin-bottom: 32px;
 }
 
+.input-container {
+  position: relative;
+  width: 80vw;
+  max-width: 320px;
+  margin: 0 auto;
+}
 
 [mat-button].film-btn{
   height: 40px;
   border-radius: 8px;
   background-color: $movie-app-color;
   border: none;
+  float: right;
+  margin-right: 16px;
 }
 
 [mat-button].film-btn /deep/ .mat-button-wrapper {
@@ -99,23 +94,45 @@
   color: $movie-app-color;
 }
 
-.input-container {
-  width: 80vw;
-  max-width: 280px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -moz-box;
-  display: flex;
+.has-voted-txt{
+  color: $white-87-opacity;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.has-voted-link{
+  color: $movie-app-color;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
 }
 
 @media screen and (max-width: 640px){
+  .heading-home{
+    font-size: 40px;
+  }
+
+  .sub-heading-home {
+    font-size: 18px;
+  }
+
   .logo-home {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
 @media screen and (min-width: 641px){
+
+  .heading-home{
+    font-size: 60px;
+  }
+
+  .sub-heading-home {
+    font-size: 24px;
+  }
+
   .logo-home {
     font-size: 32px;
   }
