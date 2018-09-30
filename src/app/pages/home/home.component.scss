@@ -16,7 +16,7 @@ app-search-bar /deep/ input{
   box-shadow: 0 0 8px 0 rgba(125, 125, 125, 0.5);
   font-size: 14px;
   font-weight: bold;
-  color: #505050;
+  color: $black-light;
 }
 
 app-search-bar /deep/ input:focus{

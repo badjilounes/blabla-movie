@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
+  searching = false;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  filterMovies(search: string): void {
+    console.log(search);
   }
 
 }

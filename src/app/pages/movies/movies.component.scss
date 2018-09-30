@@ -1,0 +1,55 @@
+@import '~@angular/material/theming';
+@import 'src/mat-theme.scss';
+
+app-search-bar /deep/ input{
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 8px 0 rgba(125, 125, 125, 0.5);
+  font-size: 14px;
+  font-weight: bold;
+  color: $movie-app-color;
+  background-color: $movie-app-bg;
+  padding: 0 42px;
+  border: none;
+}
+
+app-search-bar /deep/ input:focus{
+  outline: none;
+}
+
+[mat-icon-button]{
+  color: $movie-app-color;
+  height: 60px;
+}
+
+.header-container {
+  height: 60px;
+  width: 100%;
+  background-color: $movie-app-bg;
+}
+
+.header-content{
+  width: 100%;
+}
+
+.logo-home{
+  height: 32px;
+  line-height: 32px;
+  font-weight: bold;
+  color: $movie-app-color;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 640px){
+  .logo-home {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 641px){
+  .logo-home {
+    font-size: 32px;
+  }
+}

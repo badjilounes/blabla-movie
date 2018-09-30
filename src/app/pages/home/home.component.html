@@ -32,7 +32,7 @@
 
         <div class="input-container display-f f-dir-row" *ngSwitchCase="false">
 
-          <app-search-bar (selectedMovie)="selectMovie($event)"></app-search-bar>
+          <app-search-bar [autocomplete]="true" (selectedMovie)="selectMovie($event)"></app-search-bar>
 
           <button mat-icon-button (click)="validateVote()">
             <mat-icon aria-label="Voter">favorite</mat-icon>

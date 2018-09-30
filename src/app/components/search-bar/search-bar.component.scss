@@ -1,6 +1,14 @@
+@import '~@angular/material/theming';
+@import 'src/mat-theme.scss';
+
+:host{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
 form {
   min-width: 150px;
-  max-width: 500px;
   width: 100%;
 }
 
@@ -13,3 +21,11 @@ img {
   margin-right: 0;
   margin-left: 8px;
 }
+
+[mat-icon-button]{
+  position: absolute;
+  height: 60px;
+  color: $movie-app-color;
+}
+
+
