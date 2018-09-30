@@ -7,6 +7,41 @@
   background-color: $movie-app-bg;
 }
 
+app-search-bar /deep/ input{
+  min-width: 250px;
+  padding: 0 12px;
+  height: 40px;
+  border: none;
+  border-radius: 22px;
+  box-shadow: 0 0 8px 0 rgba(125, 125, 125, 0.5);
+  font-size: 14px;
+  font-weight: bold;
+  color: #505050;
+}
+
+app-search-bar /deep/ input:focus{
+  outline: none;
+}
+
+[mat-button].film-btn{
+  height: 40px;
+  border-radius: 8px;
+  background-color: $movie-app-color;
+  border: none;
+  float: right;
+  margin-right: 16px;
+}
+
+[mat-button].film-btn /deep/ .mat-button-wrapper {
+  color: $white-87-opacity;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+[mat-icon-button]{
+  color: $movie-app-color;
+}
+
 .home-container {
   display: block;
   position: relative;
@@ -73,25 +108,6 @@
   width: 80vw;
   max-width: 320px;
   margin: 0 auto;
-}
-
-[mat-button].film-btn{
-  height: 40px;
-  border-radius: 8px;
-  background-color: $movie-app-color;
-  border: none;
-  float: right;
-  margin-right: 16px;
-}
-
-[mat-button].film-btn /deep/ .mat-button-wrapper {
-  color: $white-87-opacity;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-[mat-icon-button]{
-  color: $movie-app-color;
 }
 
 .has-voted-txt{
