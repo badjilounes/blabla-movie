@@ -1,0 +1,22 @@
+<div class="header-container display-f f-dir-row">
+
+  <app-search-bar *ngIf="searching"
+                  (searchChanged)="searchChanged.emit($event)" (backTriggered)="searching = !searching"></app-search-bar>
+
+  <div *ngIf="!searching" class="display-f f-dir-row header-content">
+
+    <div class="logo-container flex-auto">
+
+      <p class="logo-home v-align-middle">blablamovie</p>
+
+    </div>
+
+    <button mat-icon-button (click)="searching = !searching">
+
+      <mat-icon aria-label="Rechercher">search</mat-icon>
+
+    </button>
+
+  </div>
+
+</div>

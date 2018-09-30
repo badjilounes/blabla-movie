@@ -14,13 +14,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieHeaderComponent } from './components/movie-header/movie-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchBarComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieListComponent,
+    MovieHeaderComponent
   ],
   imports: [
     AppRoutingModule,
