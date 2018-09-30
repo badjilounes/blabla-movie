@@ -1,0 +1,16 @@
+{
+  "name": "BlablaMovie",
+  "short_name": "Blabla Movie",
+  "theme_color": "#5d4037",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/assets/icons/blabla-movie.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    }
+  ]
+}

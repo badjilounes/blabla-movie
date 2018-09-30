@@ -1,14 +1,14 @@
 <div class="home-container">
 
-  <div class="header-container">
+  <div class="header-container display-f f-dir-row">
 
-    <div class="logo-container">
+    <div class="logo-container flex-auto">
 
       <p class="logo-home v-align-middle">blablamovie</p>
 
     </div>
 
-    <div class="list-btn-container">
+    <div class="list-btn-container flex-fix">
 
       <button mat-button class="film-btn v-align-middle" [routerLink]="['movies']">
         voir films
@@ -16,26 +16,38 @@
 
     </div>
 
-
   </div>
 
-  <div class="img-container">
+  <div class="img-container display-f">
 
     <img [src]="'assets/img/home.jpg'" class="img-home"/>
 
-    <div class="v-align-middle">
+    <div class="v-align-middle h-175">
 
       <p class="heading-home">Participez au jeu</p>
 
       <p class="sub-heading-home">Votez pour votre film préféré.</p>
 
-      <div class="input-container">
+      <div [ngSwitch]="hasVoted">
 
-        <app-search-bar (selectedMovie)="selectMovie($event)"></app-search-bar>
+        <div class="input-container display-f f-dir-row" *ngSwitchCase="false">
 
-        <button mat-icon-button (click)="validateVote()">
-          <mat-icon aria-label="Voter">favorite</mat-icon>
-        </button>
+          <app-search-bar (selectedMovie)="selectMovie($event)"></app-search-bar>
+
+          <button mat-icon-button (click)="validateVote()">
+            <mat-icon aria-label="Voter">favorite</mat-icon>
+          </button>
+
+        </div>
+
+        <div *ngSwitchCase="true">
+
+          <p class="has-voted-txt">Merci d'avoir pris le temps de voter.</p>
+
+          <a [routerLink]="['movies']" class="has-voted-link">Accèder au site</a>
+
+        </div>
+
 
       </div>
 
