@@ -16,6 +16,10 @@ import { environment } from '../environments/environment';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieHeaderComponent } from './components/movie-header/movie-header.component';
+import { InfiniteScrollDirective } from './directives/infinite-scroll/infinite-scroll.directive';
+import { AutoFocusDirective } from './directives/auto-focus/auto-focus.directive';
+import {MovieListLoaderComponent} from './components/movie-list-loader/movie-list-loader.component';
+import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { MovieHeaderComponent } from './components/movie-header/movie-header.com
     SearchBarComponent,
     MoviesComponent,
     MovieListComponent,
-    MovieHeaderComponent
+    MovieListLoaderComponent,
+    MovieHeaderComponent,
+    InfiniteScrollDirective,
+    AutoFocusDirective,
+    MovieDetailComponent
   ],
   imports: [
     AppRoutingModule,

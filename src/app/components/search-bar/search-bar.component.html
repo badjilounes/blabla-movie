@@ -1,12 +1,13 @@
 <form>
 
-  <button mat-icon-button [hidden]="!autocomplete" (click)="backTriggered.emit()">
+  <button mat-icon-button *ngIf="!autocomplete" (click)="backTriggered.emit()">
 
     <mat-icon aria-label="Retour">arrow_back</mat-icon>
 
   </button>
 
-  <input placeholder="Films" aria-label="Films" [matAutocomplete]="auto" [formControl]="movieCtrl">
+  <input class="auto-focus" placeholder="Rechercher un film" aria-label="Films"
+         [matAutocomplete]="auto" [formControl]="movieCtrl">
 
     <mat-autocomplete #auto="matAutocomplete" [hidden]="!autocomplete">
       <mat-option *ngFor="let movie of filteredMovies| async" [value]="movie.Title" (click)="selectedMovie.emit(movie)">

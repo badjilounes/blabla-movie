@@ -1,3 +1,25 @@
-<p>
-  movie-list works!
-</p>
+
+<mat-card *ngIf="displayedMovies?.length === 0" class="empty-card">
+
+  <div class="empty-img-container">
+    <img [src]="search.length < 3 ? 'assets/img/type.png' : 'assets/img/empty.png'" height="80px" width="80px">
+  </div>
+
+  <p class="empty-font">
+    {{search.length < 3 ? 'Tapez au moins 3 caractères' : 'Aucun résultat ne correspond à votre recherche'}}</p>
+
+</mat-card>
+
+
+<mat-card *ngFor="let movie of displayedMovies" class="movie-card" [routerLink]="['/movie/' + movie.imdbID]">
+  <p>{{movie?.Title | json}}</p>
+</mat-card>
+
+<app-movie-list-loader [hasNoElements]="movies?.totalResults === 0" *ngIf="displayedMovies?.length !== 0"
+                       [hasMoreElementsToLoad]="movies === null || movies?.totalResults > displayedMovies?.length"
+                       [elementsLoaded]="movies !== null"></app-movie-list-loader>
+
+
+
+
+

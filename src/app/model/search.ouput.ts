@@ -1,7 +1,7 @@
 import {Movie} from './movie.model';
 
-export interface SearchOuput {
-  Response: boolean;
+export interface SearchOutput {
+  Response: string;
   Search: Movie[];
   totalResults: number;
 }

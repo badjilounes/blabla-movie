@@ -1,0 +1,35 @@
+@import '~@angular/material/theming';
+@import 'src/mat-theme.scss';
+
+:host{
+  display: block;
+  position: relative;
+  background-color: $grey-light;
+  padding: 8px 14px;
+}
+
+mat-card{
+  height: 70px;
+  border-radius: 12px;
+  margin-bottom: 4px;
+}
+
+mat-card.empty-card{
+  height: 130px;
+  border-radius: 2px;
+  margin: 24px auto;
+}
+
+.empty-img-container{
+  width: 80px;
+  margin: 0 auto;
+}
+
+.empty-font{
+  font-size: 15px;
+  font-weight: bold;
+  color: $black-87-opacity;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}

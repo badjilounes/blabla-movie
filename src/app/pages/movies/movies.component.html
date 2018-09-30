@@ -1,8 +1,11 @@
-<div class="header-container display-f f-dir-col">
+<div class="container display-f f-dir-col ovf-hidden">
 
-  <app-movie-header (searchChanged)="filterMovies($event)"></app-movie-header>
+  <app-movie-header class="flex-fix" (searchChanged)="filterMovies($event)"></app-movie-header>
 
-  <app-movie-list></app-movie-list>
+  <app-movie-list class="flex-auto ovf-auto" appInfiniteScroll
+                  [movies]="movies| async" [page]="page" [search]="searchTxt"
+                  (allMoviesRetrieved)="allMoviesRetrieved = true"
+                  (reachedBottom)="fetchMovies()"></app-movie-list>
 
 </div>
 

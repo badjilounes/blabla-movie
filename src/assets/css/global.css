@@ -32,6 +32,14 @@ body {
   transform: translateY(-50%);
 }
 
+.ovf-hidden{
+  overflow: hidden;
+}
+
+.ovf-auto{
+  overflow: auto;
+}
+
 .h-175{
   height: 175px;
 }

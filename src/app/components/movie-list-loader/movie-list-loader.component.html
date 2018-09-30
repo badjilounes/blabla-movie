@@ -1,0 +1,11 @@
+<div class="container" *ngIf="!hasNoElements">
+
+  <div class="spinner-container" *ngIf="!elementsLoaded && hasMoreElementsToLoad">
+    <mat-progress-spinner class="spinner"  color="accent" [mode]="'indeterminate'"></mat-progress-spinner>
+  </div>
+
+  <p *ngIf="hasMoreElementsToLoad">{{(elementsLoaded) ? 'Charger plus de film' : 'chargement en cours ...'}}</p>
+
+  <p *ngIf="!hasMoreElementsToLoad">Tous les films ont été chargés</p>
+
+</div>
