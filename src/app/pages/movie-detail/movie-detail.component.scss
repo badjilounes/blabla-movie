@@ -1,0 +1,39 @@
+@import '~@angular/material/theming';
+@import 'src/mat-theme.scss';
+
+mat-card{
+  max-width: 600px;
+  max-height: 700px;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+mat-card img{
+  border-radius: 8px 8px 0 0;
+  max-height: 440px;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.header-container{
+  height: 60px;
+  background-color: $movie-app-bg;
+}
+
+[mat-icon-button]{
+  color: $movie-app-color;
+  height: 60px;
+  line-height: 60px;
+}
+
+.heading-font{
+  font-size: 14px;
+  color: $black-light;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-top: 16px;
+}
