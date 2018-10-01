@@ -10,22 +10,26 @@
 
   </div>
 
-  <mat-card class="flex-auto">
-    <img mat-card-image [src]="detailInfo?.Poster" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+  <div class="flex-auto ovf-auto p-12">
 
-      <p class="heading-font">Titre</p>
-      <p>{{detailInfo?.Title}}</p>
+    <mat-card>
+      <img mat-card-image [src]="detailInfo?.Poster" alt="Photo of a Shiba Inu">
+      <mat-card-content>
 
-      <p class="heading-font">Actors</p>
-      <p>{{detailInfo?.Actors}}</p>
+        <p class="heading-font">Titre</p>
+        <p>{{detailInfo?.Title}}</p>
 
-      <p class="heading-font">Sortie</p>
-      <p>{{detailInfo?.Released}}</p>
+        <p class="heading-font">Actors</p>
+        <p>{{detailInfo?.Actors}}</p>
 
-      <p class="heading-font">Description</p>
-      <p>{{detailInfo?.Plot}}</p>
-    </mat-card-content>
-  </mat-card>
+        <p class="heading-font">Sortie</p>
+        <p>{{detailInfo?.Released}}</p>
+
+        <p class="heading-font">Description</p>
+        <p>{{detailInfo?.Plot}}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 
 </div>
