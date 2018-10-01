@@ -2,6 +2,19 @@ body {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
+.touchscroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position:relative;
+  height:100%;
+}
+.touchscroll body {
+  height:100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position:relative;
+}
+
 .display-f {
   display: -webkit-box;
   display: -ms-flexbox;
