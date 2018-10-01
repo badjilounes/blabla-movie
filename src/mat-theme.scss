@@ -13,6 +13,9 @@ $movie-app-warn:  mat-palette($mat-orange, A200, A100, A400);
 $movie-app-bg: #000;
 $movie-app-color: #e50914;
 
+$black-light: #505050;
+$grey-light: #eeeeee;
+
 $movie-app-theme:   mat-light-theme($movie-app-primary, $movie-app-accent, $movie-app-warn);
 
 

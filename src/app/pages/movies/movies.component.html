@@ -1,3 +1,11 @@
-<p>
-  movies works!
-</p>
+<div class="container display-f f-dir-col ovf-hidden">
+
+  <app-movie-header class="flex-fix" (searchChanged)="filterMovies($event)"></app-movie-header>
+
+  <app-movie-list class="flex-auto ovf-auto touchscroll" appInfiniteScroll
+                  [movies]="movies| async" [page]="page" [search]="searchTxt"
+                  (allMoviesRetrieved)="allMoviesRetrieved = true"
+                  (reachedBottom)="fetchMovies()"></app-movie-list>
+
+</div>
+

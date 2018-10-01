@@ -1,0 +1,77 @@
+@import '~@angular/material/theming';
+@import 'src/mat-theme.scss';
+
+:host{
+  display: block;
+  position: relative;
+  background-color: $grey-light;
+  padding: 8px 14px;
+}
+
+mat-card{
+  height: 120px;
+  border-radius: 12px;
+  margin-bottom: 4px;
+}
+
+mat-card.empty-card{
+  height: 130px;
+  border-radius: 2px;
+  margin: 24px auto;
+}
+
+mat-card.movie-card{
+  padding: 0;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.empty-img-container{
+  width: 80px;
+  margin: 0 auto;
+}
+
+.empty-font{
+  font-size: 15px;
+  font-weight: bold;
+  color: $black-87-opacity;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.movie-pic{
+  border-radius: 8px 0 0 8px;
+}
+
+.detail-container{
+  padding: 12px;
+}
+
+.detail-title-font{
+  font-size: 18px;
+  font-weight: bold;
+  color: $black-87-opacity;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.detail-type{
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $black-87-opacity;
+  font-weight: 600;
+}
+
+.movie-card:not(:hover) mat-icon {
+  display: none;
+}
+
+.movie-card:hover mat-icon {
+  display: block;
+}
+
+mat-icon{
+  height: 120px;
+  line-height: 120px;
+}

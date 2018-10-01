@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Output} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/internal/operators';
 import {FormControl} from '@angular/forms';
 import {Observable, Subject} from 'rxjs/index';
@@ -12,7 +12,10 @@ import {Movie} from '../../model/movie.model';
 })
 export class SearchBarComponent implements AfterViewInit {
 
-  @Output() selectedMovie: EventEmitter<Movie> = new EventEmitter<Movie>();
+  @Input() autocomplete = false;
+  @Output() public selectedMovie: EventEmitter<Movie> = new EventEmitter<Movie>();
+  @Output() public backTriggered: EventEmitter<void> = new EventEmitter<void>();
+  @Output() private searchChanged: EventEmitter<string> = new EventEmitter<string>();
 
   movieCtrl = new FormControl();
   filteredMovies: Observable<Movie[]>;
@@ -23,8 +26,12 @@ export class SearchBarComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.rebound.pipe(debounceTime(225), distinctUntilChanged())
       .subscribe(search => {
-        this.filteredMovies = this.movieSrv.searchMovie({s: search}).pipe(map(e => e.Search));
-        this.cdr.markForCheck();
+        if (this.autocomplete) {
+          this.filteredMovies = this.movieSrv.searchMovie({s: search}).pipe(map(e => e.Search));
+          this.cdr.markForCheck();
+        } else {
+          this.searchChanged.emit(search);
+        }
       });
 
     this.movieCtrl.valueChanges.subscribe(search => this.rebound.next(search));
