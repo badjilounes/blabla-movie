@@ -11,14 +11,18 @@ import {Observable} from 'rxjs/index';
 })
 export class MovieDetailComponent implements AfterViewInit {
 
-  detailInfo: Observable<any> = undefined;
+  detailInfo: any = undefined;
 
   constructor(private movieSrv: MovieService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
     let detail: DetailInput = {i: this.route.snapshot.params.id};
-    this.detailInfo = this.movieSrv.getMovieDetail(detail);
-    this.cdr.markForCheck()
+    this.detailInfo = this.movieSrv.getMovieDetail(detail).toPromise().then(
+      info => {
+        this.detailInfo = info;
+        this.cdr.markForCheck();
+      }
+    );
   }
 
 }

@@ -11,20 +11,20 @@
   </div>
 
   <mat-card class="flex-auto">
-    <img mat-card-image [src]="(detailInfo | async)?.Poster" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="detailInfo?.Poster" alt="Photo of a Shiba Inu">
     <mat-card-content>
 
       <p class="heading-font">Titre</p>
-      <p>{{(detailInfo | async)?.Title}}</p>
+      <p>{{detailInfo?.Title}}</p>
 
       <p class="heading-font">Actors</p>
-      <p>{{(detailInfo | async)?.Actors}}</p>
+      <p>{{detailInfo?.Actors}}</p>
 
       <p class="heading-font">Sortie</p>
-      <p>{{(detailInfo | async)?.Released}}</p>
+      <p>{{detailInfo?.Released}}</p>
 
       <p class="heading-font">Description</p>
-      <p>{{(detailInfo | async)?.Plot}}</p>
+      <p>{{detailInfo?.Plot}}</p>
     </mat-card-content>
   </mat-card>
 
