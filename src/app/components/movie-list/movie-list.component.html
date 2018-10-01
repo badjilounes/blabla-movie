@@ -12,7 +12,31 @@
 
 
 <mat-card *ngFor="let movie of displayedMovies" class="movie-card" [routerLink]="['/movie/' + movie.imdbID]">
-  <p>{{movie?.Title | json}}</p>
+  <div class="display-f f-dir-row">
+
+
+    <div class="flex-fix w-120">
+
+       <img class="movie-pic" [src]="movie.Poster" height="120px" width="120px"/>
+
+    </div>
+
+
+    <div class="flex-auto detail-container">
+
+      <p class="detail-title-font">{{movie?.Title}}</p>
+
+      <p class="detail-type">{{movie?.Type}}</p>
+
+    </div>
+
+    <div class="flex-fix arrow">
+      <mat-icon>chevron_right</mat-icon>
+    </div>
+
+
+  </div>
+
 </mat-card>
 
 <app-movie-list-loader [hasNoElements]="movies?.totalResults === 0" *ngIf="displayedMovies?.length !== 0"
