@@ -7,7 +7,7 @@ echo "Entrer la branche à déployer."
 read front_branch
 
 git clone -b $front_branch https://github.com/badjilounes/blabla-movie.git BlablaMovie || exit 1
-git clone -b master https://git.heroku.com/badjilounes.git NodeStatic || exit 1
+git clone -b master https://git.heroku.com/blablamovie.git NodeStatic || exit 1
 
 cd BlablaMovie
 yarn --network-timeout 1000000
