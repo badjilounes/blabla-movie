@@ -5,11 +5,11 @@
 
   <div *ngIf="!searching" class="display-f f-dir-row header-content">
 
-    <div class="logo-container flex-auto">
+    <a class="logo-container flex-auto" [routerLink]="['/']">
 
       <p class="logo-home v-align-middle">blablamovie</p>
 
-    </div>
+    </a>
 
     <button mat-icon-button (click)="searching = !searching">
 
