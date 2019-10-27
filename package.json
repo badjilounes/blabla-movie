@@ -11,6 +11,7 @@
   },
   "engines": {
     "node": "12.8.0",
+    "npm": "5.0.0",
     "yarn": "1.17.3"
   },
   "private": true,
