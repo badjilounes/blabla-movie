@@ -13,7 +13,7 @@
   <div class="flex-auto ovf-auto p-12">
 
     <mat-card>
-      <img mat-card-image [src]="detailInfo?.Poster" alt="Photo of a Shiba Inu">
+      <img mat-card-image [src]="detailInfo?.Poster === 'N/A' ? 'assets/img/poster-not-found.jpg' : detailInfo?.Poster" alt="Photo of a Shiba Inu">
       <mat-card-content>
 
         <p class="heading-font">Titre</p>

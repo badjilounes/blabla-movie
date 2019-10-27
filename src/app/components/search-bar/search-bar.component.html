@@ -11,7 +11,7 @@
 
     <mat-autocomplete #auto="matAutocomplete" [hidden]="!autocomplete">
       <mat-option *ngFor="let movie of filteredMovies| async" [value]="movie.Title" (click)="selectedMovie.emit(movie)">
-        <img [src]="movie.Poster" height="25">
+        <img [src]="movie.Poster === 'N/A' ? 'assets/img/poster-not-found.jpg' : movie.Poster" height="25">
         <span class="title-font">{{movie.Title}}</span> | <small class="gender-font">{{movie.Type}}</small>
       </mat-option>
     </mat-autocomplete>

@@ -14,16 +14,16 @@ mat-card{
   margin-bottom: 4px;
 }
 
-mat-card.empty-card{
-  height: 130px;
-  border-radius: 2px;
-  margin: 24px auto;
-}
-
 mat-card.movie-card{
   padding: 0;
   cursor: pointer;
   cursor: hand;
+}
+
+.empty-card{
+  height: 130px;
+  border-radius: 2px;
+  margin: 24px auto;
 }
 
 .empty-img-container{
